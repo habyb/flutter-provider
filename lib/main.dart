@@ -1,4 +1,4 @@
-import 'package:flutterprovider/screens/transferencia/lista.dart';
+import 'package:flutterprovider/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(FlutterProvider());
@@ -17,7 +17,7 @@ class FlutterProvider extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: ListaTransferencias(),
+      home: Dashboard(),
     );
   }
 }
