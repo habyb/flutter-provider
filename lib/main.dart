@@ -4,8 +4,12 @@ import 'package:provider/provider.dart';
 
 import 'models/saldo.dart';
 
-void main() => runApp(ChangeNotifierProvider(
-      create: (context) => Saldo(0),
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Saldo(0),
+        ),
+      ],
       child: FlutterProvider(),
     ));
 

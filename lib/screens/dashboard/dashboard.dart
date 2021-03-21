@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutterprovider/screens/dashboard/saldo.dart';
 import 'package:flutterprovider/screens/deposito/formulario.dart';
+import 'package:flutterprovider/screens/transferencia/formulario.dart';
 
 class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -15,16 +16,40 @@ class Dashboard extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: SaldoCard(),
           ),
-          ElevatedButton(
-            child: Text('Receber depósito'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return FormularioDeposito();
-                }),
-              );
-            },
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                child: Text('Receber depósito'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green, // background
+                  onPrimary: Colors.white, // foreground
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return FormularioDeposito();
+                    }),
+                  );
+                },
+              ),
+              ElevatedButton(
+                child: Text('Nova transferência'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green, // background
+                  onPrimary: Colors.white, // foreground
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return FormularioTransferencia();
+                    }),
+                  );
+                },
+              )
+            ],
           )
         ],
       ),
