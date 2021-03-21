@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutterprovider/models/transferencias.dart';
 import 'package:flutterprovider/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
