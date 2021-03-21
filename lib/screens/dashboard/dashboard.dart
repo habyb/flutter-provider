@@ -20,7 +20,7 @@ class Dashboard extends StatelessWidget {
             builder: (context, saldo, chhild) {
               return ElevatedButton(
                 onPressed: () {
-                  saldo.adiciona(10.0);
+                  saldo.adiciona(10);
                 },
                 child: Text('Adiciona'),
               );
