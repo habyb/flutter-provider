@@ -1,4 +1,3 @@
-
 import 'package:flutter/widgets.dart';
 
 class Saldo extends ChangeNotifier {
@@ -7,7 +6,7 @@ class Saldo extends ChangeNotifier {
   Saldo(this.valor);
 
   @override
-  String toString(){
+  String toString() {
     return 'R\$ $valor';
   }
 }
