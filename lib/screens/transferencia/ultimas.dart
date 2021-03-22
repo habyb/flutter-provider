@@ -17,20 +17,31 @@ class UltimasTransferencias extends StatelessWidget {
             fontSize: 28.0,
           ),
         ),
-        Consumer<Transferencias>(
-          builder: (context, transferencias, child){
-            return ListView.builder(
-              padding: const EdgeInsets.all(8.0),
-              itemCount: 2,
-              shrinkWrap: true,
-              itemBuilder: (context, indice){
-                return ItemTransferencia(transferencias.transferencias[indice]);
-              },
-            );
+        Consumer<Transferencias>(builder: (context, transferencias, child) {
+          final _ultimasTransferencias =
+              transferencias.transferencias.reversed.toList();
+          final _quantidade = transferencias.transferencias.length;
+          int tamanho = 2;
+          
+          if (_quantidade == 0) {
+            return SemTransferenciaCadastrada();
           }
-          ),
+
+          if (_quantidade < 3) {
+            tamanho = _quantidade;
+          }
+
+          return ListView.builder(
+            padding: const EdgeInsets.all(8.0),
+            itemCount: tamanho,
+            shrinkWrap: true,
+            itemBuilder: (context, indice) {
+              return ItemTransferencia(_ultimasTransferencias[indice]);
+            },
+          );
+        }),
         ElevatedButton(
-          child: Text('Transferências'),
+          child: Text('Ver todas as transferências'),
           style: ElevatedButton.styleFrom(
             primary: Colors.green, // background
             onPrimary: Colors.white, // foreground
@@ -45,6 +56,22 @@ class UltimasTransferencias extends StatelessWidget {
           },
         )
       ],
+    );
+  }
+}
+
+class SemTransferenciaCadastrada extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.all(40.0),
+      child: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text(
+          'Você ainda não cadastrou nenhuma transferência',
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
