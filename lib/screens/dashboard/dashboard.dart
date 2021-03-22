@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutterprovider/screens/dashboard/saldo.dart';
 import 'package:flutterprovider/screens/deposito/formulario.dart';
 import 'package:flutterprovider/screens/transferencia/formulario.dart';
-import 'package:flutterprovider/screens/transferencia/lista.dart';
 import 'package:flutterprovider/screens/transferencia/ultimas.dart';
 
 class Dashboard extends StatelessWidget {
