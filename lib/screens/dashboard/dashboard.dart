@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutterprovider/screens/dashboard/saldo.dart';
 import 'package:flutterprovider/screens/deposito/formulario.dart';
 import 'package:flutterprovider/screens/transferencia/formulario.dart';
+import 'package:flutterprovider/screens/transferencia/lista.dart';
 
 class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -50,6 +51,21 @@ class Dashboard extends StatelessWidget {
                 },
               )
             ],
+          ),
+          ElevatedButton(
+            child: Text('Transferências'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.green, // background
+              onPrimary: Colors.white, // foreground
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return ListaTransferencias();
+                }),
+              );
+            },
           )
         ],
       ),
